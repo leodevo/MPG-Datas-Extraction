@@ -1,0 +1,23 @@
+{
+  "name": "mpg-datas-extraction",
+  "version": "1.0.0",
+  "description": "This is a node.JS script to extract datas for the fantasy football game \"Mon Petit Gazon\" from xlsx files (source: http://statsl1mpg.over-blog.com/).  These datas are then inserted into a MongoDB database using mongoose.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leodevo/MPG-Datas-EXtraction.git"
+  },
+  "author": "leodevo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leodevo/MPG-Datas-EXtraction/issues"
+  },
+  "homepage": "https://github.com/leodevo/MPG-Datas-EXtraction#readme",
+  "dependencies": {
+    "mongoose": "^5.4.13",
+    "node-xlsx": "^0.14.1"
+  }
+}
