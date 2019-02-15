@@ -6,4 +6,4 @@ These datas are then inserted into a MongoDB database using mongoose.
 # What I Learned
 
 * xlsx files parsing
-* mongoose models
+* mongoose basics
