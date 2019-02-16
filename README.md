@@ -7,3 +7,4 @@ These datas are then inserted into a MongoDB database using mongoose.
 
 * xlsx files parsing
 * mongoose basics
+* Promises
