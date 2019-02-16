@@ -69,8 +69,8 @@ const extractPlayerDatas = (player, teamName) => {
     averageLast10games = sumOfGradesLast10games / tituAndSubsLast10games
   }
 
-  return aPlayer = new Player({
-    team : teamName,
+  let aPlayer = new Player({
+    team: teamName,
     name,
     position,
     cote,
@@ -83,6 +83,8 @@ const extractPlayerDatas = (player, teamName) => {
     tituAndSubsLast10games,
     averageLast10games
   })
+
+  return aPlayer
 }
 
 const extractDatas = () => {
@@ -94,7 +96,7 @@ const extractDatas = () => {
     let teamName = constants.TEAM_MAP.get(teamDataSheet.data[0][0])
 
     console.log(`For ${teamName} : extracting ${teamPlayers.length} players datas`)
-    
+
     for (let player of teamPlayers) {
       const aPlayerExtracted = extractPlayerDatas(player, teamName)
       playersForDB.push(aPlayerExtracted)
@@ -107,12 +109,11 @@ const extractDatas = () => {
 const savePlayers = (playersForDB) => {
   console.log(`number of players to save : ${playersForDB.length}`)
 
-  let savePlayersPromise = new Promise(function(resolve, reject) {
-
+  let savePlayersPromise = new Promise(function (resolve, reject) {
     let arrayOfPromises = []
     for (let player of playersForDB) {
       arrayOfPromises.push(player.save().then((playerSaved) => {
-        //console.log(`Saved player : ${playerSaved.name}`)
+        // console.log(`Saved player : ${playerSaved.name}`)
       }, (e) => {
         console.log(`for player : ${player.name} an error was encountered :`)
         console.log(e)
@@ -128,8 +129,8 @@ const savePlayers = (playersForDB) => {
 }
 
 const extractAndPushDatas = () => {
-    let playersForDB = extractDatas()
-    return savePlayers(playersForDB)
+  let playersForDB = extractDatas()
+  return savePlayers(playersForDB)
 }
 
 Player.deleteMany({})
@@ -138,4 +139,4 @@ Player.deleteMany({})
     mongoose.connection.close()
   }).catch((e) => {
     console.log(e)
-})
+  })
