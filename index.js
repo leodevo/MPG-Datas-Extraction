@@ -1,4 +1,5 @@
 let xlsx = require('node-xlsx').default
+require('./config/config')
 
 const { Player } = require('./models/player')
 const { constants } = require('./constants')

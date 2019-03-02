@@ -18,7 +18,8 @@
   "homepage": "https://github.com/leodevo/MPG-Datas-EXtraction#readme",
   "dependencies": {
     "mongoose": "^5.4.13",
-    "node-xlsx": "^0.14.1"
+    "node-xlsx": "^0.14.1",
+    "yargs": "^13.2.1"
   },
   "devDependencies": {
     "eslint": "^5.14.0",
