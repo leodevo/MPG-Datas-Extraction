@@ -53,11 +53,11 @@ const extractPlayerDatas = (player, teamName) => {
   let sumOfGradesLast10games = 0
   let averageLast10games = null
 
-  for (let val = constants.POS_FIRST_GAME; val < constants.POS_FIRST_GAME + 1 + constants.NUMBER_OF_GAMES; val++) {
+  for (let val = constants.POS_FIRST_GAME; val < constants.POS_FIRST_GAME + constants.NUMBER_OF_GAMES; val++) {
     grades.push(player[val])
   }
 
-  for (let pos = constants.POS_FIRST_GAME + 1 + constants.NUMBER_OF_GAMES - 10; pos < constants.POS_FIRST_GAME + 1 + constants.NUMBER_OF_GAMES; pos++) {
+  for (let pos = constants.POS_FIRST_GAME + constants.NUMBER_OF_GAMES - 10; pos < constants.POS_FIRST_GAME + constants.NUMBER_OF_GAMES; pos++) {
     gradesLast10games.push(player[pos])
 
     if (!isNaN(player[pos])) {
